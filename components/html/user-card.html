@@ -1,0 +1,69 @@
+<style>
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  img {
+    height: 13vh;
+    width: auto;
+    border-top-left-radius: 5px;
+  }
+
+  .user-card {
+    width: 400px;
+    margin: 0 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-bottom: 5px #790b79 solid;
+    border-radius: 5px;
+  }
+
+  .user-info {
+    height: 13vh;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .user-info h3 {
+    margin: 10px 0;
+  }
+
+  .user-info p {
+    margin: 7px 0;
+    font-weight: bold;
+  }
+
+  button {
+    color: #fff;
+    background-color: #790b79;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin-top: 5px;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<content class="user-card">
+  <img />
+  <div class="user-info">
+    <h3></h3>
+    <p id="email"></p>
+    <p id="phone-number"></p>
+    <button>Hide Info</button>
+  </div>
+</content>
