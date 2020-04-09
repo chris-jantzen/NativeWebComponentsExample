@@ -2,7 +2,9 @@ class UserCard extends HTMLElement {
   constructor() {
     super();
 
+    let template = document.createElement('template');
     this.attachShadow({ mode: 'open' });
+    this.shadowRoot.appendChild(template.content.cloneNode(true));
   }
 
   get name() {
@@ -10,7 +12,9 @@ class UserCard extends HTMLElement {
   }
 
   get avatar() {
-    return this.getAttribute('avatar');
+    return `https://randomuser.me/api/portraits/${this.getAttribute(
+      'gender'
+    )}/${~~(Math.random() * 50)}.jpg`;
   }
 
   get email() {
@@ -30,10 +34,9 @@ class UserCard extends HTMLElement {
     let res = await fetch(
       'http://localhost:5500/components/html/user-card.html'
     );
+
     let html = await res.text();
-    let template = document.createElement('template');
-    template.innerHTML = html;
-    _this.shadowRoot.appendChild(template.content.cloneNode(true));
+    _this.shadowRoot.innerHTML = html;
     _this.createCard();
   };
 
