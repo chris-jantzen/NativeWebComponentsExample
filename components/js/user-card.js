@@ -45,9 +45,7 @@ class UserCard extends HTMLElement {
     _this.shadowRoot.querySelector('h3').innerText = this.name;
     _this.shadowRoot.querySelector('#email').innerText = this.email;
     _this.shadowRoot.querySelector('#phone-number').innerText = this.phone;
-
-    let image = _this.shadowRoot.querySelector('img');
-    image.src = this.avatar;
+    _this.shadowRoot.querySelector('img').src = this.avatar;
   };
 }
 
